@@ -1,0 +1,7 @@
+{
+  "apiBaseUrl": "http://localhost/api/v1/",
+  "offlineUrl": "http://localhost/offline_map/{z}/{x}/{y}.png",
+  "baseUrl": "http://localhost/",
+  "lightSocket": "http://localhost/lightsocket",
+  "theme": "http://localhost/theme.js"
+}

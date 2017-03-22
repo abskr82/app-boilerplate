@@ -7,7 +7,7 @@ import navFeatureModule from './nav';
 
 
 
-export default angular.module('simplysnap-ui', [
+export default angular.module('lighting-ui', [
   classicModules.name,
   classicVendors.name,
   appControllerModule.name,

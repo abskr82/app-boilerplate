@@ -1,0 +1,6 @@
+{
+  "apiBaseUrl": "/api/v1/",
+  "baseUrl": "",
+  "lightSocket": "/lightsocket",
+  "theme": "/theme.js"
+}

@@ -1,0 +1,9 @@
+{
+  "apiBaseUrl": "/api/v1/",
+  "offlineUrl": "http://localhost:8888/offline_map/{z}/{x}/{y}.png",
+  "baseUrl": "http://localhost:8080/",
+  "lightSocket": "/lightsocket",
+  "theme": "/theme.js",
+  "apiStreetUrl": "https://{s}.tiles.mapbox.com/v3/synapse-wireless.k2bl463f/{z}/{x}/{y}.png",
+  "apiSatelliteUrl": "https://{s}.tiles.mapbox.com/v3/synapse-wireless.k30ak63n/{z}/{x}/{y}.png"
+}

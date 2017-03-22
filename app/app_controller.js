@@ -43,7 +43,7 @@ function AppController($scope, $interval, AuthService, LightSocket, $rootScope, 
   $rootScope.$on('LightSocket.authentication', socketAuthentication);
 }
 
-export default angular.module('simplysnap-ui.app-controller', [
+export default angular.module('lighting-ui.app-controller', [
     classicModules.name
   ])
   .controller('AppController', AppController);

@@ -1,6 +1,6 @@
 import { Auth } from '+core/actions'; // Found in Angular 2 half, see `src/+core/actions`
 
-angular.module('simplysnap-ui-login').provider('AuthService', function AuthServiceProvider() {
+angular.module('lighting-ui-login').provider('AuthService', function AuthServiceProvider() {
   var self = this;
 
   self.$get = [
