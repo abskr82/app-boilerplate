@@ -49,7 +49,7 @@
  // jshint ignore:line
       $scope.inProgress = false;
       $scope.username = '';
-
+      alert('hi');
       function doPostLoginTasks() {
         AuthService.changePasswordStatus().then(result => {
           if (result.status !== 200) {

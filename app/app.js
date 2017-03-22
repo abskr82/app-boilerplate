@@ -17,31 +17,34 @@ export default angular.module('lighting-ui', [
 .config(['$urlRouterProvider', function ($urlRouterProvider) {
   $urlRouterProvider.otherwise('/login');
 }])
-.config(['$httpProvider', function ($httpProvider) {
-  $httpProvider.interceptors.push('HttpInterceptor');
-}])
-.config(['$sceDelegateProvider', 'Defaults', function ($sceDelegateProvider, Defaults) {
-  $sceDelegateProvider.resourceUrlWhitelist(['self', Defaults.baseUrl + '**']);
-}])
-.config(['RestServiceProvider', 'Defaults', function (RestServiceProvider, Defaults) {
-  RestServiceProvider.setBaseUrl(Defaults.apiBaseUrl);
-}])
-.config(['LightSocketProvider', 'Defaults', function (LightSocketProvider, Defaults) {
-  LightSocketProvider.setOptions({
-    url: Defaults.lightSocket
-  });
-}])
-.run([
-  '$rootScope', '$state', 'AuthService',
-  function ($rootScope, $state, AuthService) {
-    $rootScope.$on("$stateChangeStart", function (event, nextRoute) {
-      if ((!nextRoute.access || !nextRoute.access.isPublic)) {
-        AuthService.isAuthenticated().then(function (authed){
-          if(!authed){
-            $state.go('login');
-          }
-        });
-      }
-    });
+// .config(['$httpProvider', function ($httpProvider) {
+//   $httpProvider.interceptors.push('HttpInterceptor');
+// }])
+// .config(['$sceDelegateProvider', 'Defaults', function ($sceDelegateProvider, Defaults) {
+//   $sceDelegateProvider.resourceUrlWhitelist(['self', Defaults.baseUrl + '**']);
+// }])
+// .config(['RestServiceProvider', 'Defaults', function (RestServiceProvider, Defaults) {
+//   RestServiceProvider.setBaseUrl(Defaults.apiBaseUrl);
+// }])
+// .config(['LightSocketProvider', 'Defaults', function (LightSocketProvider, Defaults) {
+//   LightSocketProvider.setOptions({
+//     url: Defaults.lightSocket
+//   });
+// }])
+.run([ '$state',
+  // '$rootScope', '$state', 'AuthService',
+  // function ($rootScope, $state, AuthService) {
+  //   $rootScope.$on("$stateChangeStart", function (event, nextRoute) {
+  //     if ((!nextRoute.access || !nextRoute.access.isPublic)) {
+  //       AuthService.isAuthenticated().then(function (authed){
+  //         if(!authed){
+  //           $state.go('login');
+  //         }
+  //       });
+  //     }
+  //   });
+  // }
+  function($state) {
+     $state.go('login');
   }
 ]);
