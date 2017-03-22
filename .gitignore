@@ -1,0 +1,77 @@
+bower_components
+build
+node_modules
+.npmrc
+
+# Checkstyle JSHint Output for Jenkins
+checkstyle.xml
+
+# debugging log
+debug.log
+
+# npm debugging log
+npm-debug.log
+yarn-error.log
+
+# Jenkins XUnit test output
+test-results.xml
+
+# Versioner
+_version.py
+version.txt
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+.Python
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+sdist/
+*.egg-info/
+.installed.cfg
+*.egg
+.nyc_output/
+.DS_Store
+
+# Virtual Environment
+.venv
+env/
+.env
+venv
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Wing
+*.wpu
+
+# PyCharm
+.idea
+coverage
+.eggs/
+test/screenshots/
+xmloutput/
+
+# IntelliJ
+*.iml
+
+# VSCode
+.vscode
+
+# Testing tmp files
+test/tmp
+test/results
+test/e2e/local_config.json
+
+#bower cache
+.cache
+
+#linter output
+jslint.xml
+e2e/results
