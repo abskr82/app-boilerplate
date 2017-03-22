@@ -1,4 +1,4 @@
-import { Auth } from '+core/actions'; // Found in Angular 2 half, see `src/+core/actions`
+// import { Auth } from '+core/actions'; // Found in Angular 2 half, see `src/+core/actions`
 
 angular.module('lighting-ui-login').provider('AuthService', function AuthServiceProvider() {
   var self = this;
@@ -74,7 +74,7 @@ angular.module('lighting-ui-login').provider('AuthService', function AuthService
         return $q(function (resolve) {
           if ($rootScope.isLogged) {
             resolve($rootScope.isLogged);
-            StoreDispatcher.dispatch(new Auth.LoginSuccessAction(user));
+            // StoreDispatcher.dispatch(new Auth.LoginSuccessAction(user));
           } else {
             getExistingSession().then(function () {
               resolve($rootScope.isLogged);
@@ -98,9 +98,9 @@ angular.module('lighting-ui-login').provider('AuthService', function AuthService
           if (result.data.password_changed === '') {
             $rootScope.isLogged = false;
             d.resolve();
-            StoreDispatcher.dispatch(new Auth.LogoutAction());
+            // StoreDispatcher.dispatch(new Auth.LogoutAction());
           } else {
-            StoreDispatcher.dispatch(new Auth.LoginSuccessAction(user));
+            // StoreDispatcher.dispatch(new Auth.LoginSuccessAction(user));
             PermissionService.set().then(function () {
               $rootScope.isLogged = true;
               d.resolve();
@@ -109,7 +109,7 @@ angular.module('lighting-ui-login').provider('AuthService', function AuthService
         }).catch(function () {
           $rootScope.isLogged = false;
           d.resolve();
-          StoreDispatcher.dispatch(new Auth.LogoutAction());
+          // StoreDispatcher.dispatch(new Auth.LogoutAction());
         });
 
         return d.promise;

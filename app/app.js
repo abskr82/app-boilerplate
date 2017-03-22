@@ -2,17 +2,17 @@ import classicModules from './classic_modules';
 import classicVendors from './classic_vendors';
 
 import appControllerModule from './app_controller';
-import themesFeatureModule from './themes';
-import navFeatureModule from './nav';
+// import themesFeatureModule from './themes';
+// import navFeatureModule from './nav';
 
 
 
 export default angular.module('lighting-ui', [
   classicModules.name,
   classicVendors.name,
-  appControllerModule.name,
-  themesFeatureModule.name,
-  navFeatureModule.name
+  appControllerModule.name
+  // themesFeatureModule.name,
+  // navFeatureModule.name
 ])
 .config(['$urlRouterProvider', function ($urlRouterProvider) {
   $urlRouterProvider.otherwise('/login');
