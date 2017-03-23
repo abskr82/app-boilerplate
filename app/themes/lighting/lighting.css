@@ -1,0 +1,229 @@
+/* Fonts */
+@font-face {
+    font-family: 'Proxima Nova Regular';
+    src: url('../../assets/fonts/proxima_nova_regular-webfont.eot');
+    src: url('../../assets/fonts/proxima_nova_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../assets/fonts/proxima_nova_regular-webfont.woff2') format('woff2'),
+         url('../../assets/fonts/proxima_nova_regular-webfont.woff') format('woff'),
+         url('../../assets/fonts/proxima_nova_regular-webfont.ttf') format('truetype'),
+         url('../../assets/fonts/proxima_nova_regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Semibold';
+    src: url('../../assets/fonts/proxima_nova_semibold-webfont.eot');
+    src: url('../../assets/fonts/proxima_nova_semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../assets/fonts/proxima_nova_semibold-webfont.woff2') format('woff2'),
+         url('../../assets/fonts/proxima_nova_semibold-webfont.woff') format('woff'),
+         url('../../assets/fonts/proxima_nova_semibold-webfont.ttf') format('truetype'),
+         url('../../assets/fonts/proxima_nova_semibold-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Bold font for this theme */
+html .font-semibold,
+html .bhContainer legend,
+html .bhContainer .behavior-headings,
+html label {
+  font-family: "Proxima Nova Semibold", "Proxima Nova Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html body,
+html input,
+html p,
+html select,
+html .dropdown-multiselect label {
+    font-family: "Proxima Nova Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html h1, html h2, html h3, html h4, html h5, html h6,
+.html h1, .html h2, .html h3, .html h4, .html h5, .html h6 {
+  font-family: "Proxima Nova Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html body,
+html .navbar-default,
+html #page-wrapper {
+    background-color: #f9f9fa;
+}
+
+/* Panels */
+html .panel {
+    background-color: #0b7998;
+}
+
+html .panel-footer i:hover {
+    color: #0b7998;
+}
+
+html .panel .switch :checked + i {
+    box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #0b7998;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #0b7998;
+}
+
+html .panel.panel-green {
+    background-color: #2c714d;
+}
+
+html .panel-green .panel-heading {
+    border-color: #2c714d;
+    color: #fff;
+    background-color: #2c714d;
+}
+
+/*html .panel-green .panel-footer i {
+    color: #5bbf8c;
+}*/
+
+html .panel-green .panel-footer i:hover {
+    color: #2c714d;
+}
+
+html .panel-green .switch :checked + i {
+    box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #2c714d;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #2c714d;
+}
+
+html .level-CRITICAL,
+html .level-50 {
+    color: #B62D1E;
+}
+
+html .level-ERROR,
+html .level-40 {
+    color: #aa5f25;
+}
+
+html .label-danger {
+    background-color: #e33825;
+}
+
+html .panel.panel-yellow {
+    background-color: #C08B3E;
+}
+
+html .panel-yellow .panel-heading {
+    border-color: #C08B3E;
+    color: #fff;
+    background-color: #C08B3E;
+}
+
+/*html .panel-yellow .panel-footer i {
+    color: #f0ad4e;
+}*/
+
+html .panel-yellow .panel-footer i:hover {
+    color: #C08B3E;
+}
+
+html .level-WARNING,
+html .level-30 {
+color: #f9d11b;
+/* border: 1px #000 solid; */
+}
+
+/* Navbar */
+html .navbar-toggle {
+  background-color: #0b7998;
+}
+
+html .navbar-default .navbar-nav > li > a:hover {
+  color: #0b7998;
+}
+
+html .navbar-default .navbar-nav > li > a:focus {
+  color: inherit;
+}
+
+html .navbar-default .navbar-nav > li.navbar-nav-active > a {
+  color: #0b7998;
+}
+
+html .dropdown-menu > li > a:hover,
+html .dropdown-menu > li > a:focus {
+    background-color: #0b7998;
+}
+html .dropdown-menu > .active > a,
+html .dropdown-menu > .active > a:hover,
+html .dropdown-menu > .active > a:focus {
+    background-color: #0b7998;
+}
+
+html .has-success .form-control,
+html .has-success .form-control:focus {
+    border: 2px solid #0b7998;
+}
+
+html .has-success .help-block,
+html .has-success .control-label,
+html .has-success .radio,
+html .has-success .checkbox,
+html .has-success .radio-inline,
+html .has-success .checkbox-inline,
+html .has-success .form-control-feedback {
+    color: #0b7998;
+}
+
+/* Scheduler */
+html #eventStartTime .btn-default {
+  background-color: #1c4c58;
+}
+html #eventStartTime .btn-default:hover {
+  background-color: #1a242f;
+  border-color: #161f29;
+}
+html .schedule-weekdays .btn.active {
+  background-color: #1c4c58;
+}
+
+/* Other */
+html .search-container i:hover {
+    color: #0b7998;
+}
+
+.search-clear:hover {
+  color: #0b7998;
+}
+
+html .property-name {
+  color: #0b7998;
+}
+
+html .ngTopPanel {
+  background-color: #0b7998;
+}
+
+html .zone-tree-icon {
+  color: #0b7998;
+}
+
+html .zone-tree-name {
+  color: #0b7998;
+}
+
+.edit-light-map {
+  border: 1px solid #0b7998;
+}
+
+html .btn-primary {
+  background-color: #1c4c58;
+  border-color: #1c4c58;
+}
+
+html .fc-event-container .fc-time {
+  background-color: #1c4c58;
+}
+html .fc-event-container .fc-title {
+  background-color: #1c4c58;
+}
+
+.notransition * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
