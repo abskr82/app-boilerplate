@@ -36,7 +36,7 @@ module.exports = function createWebpackConfig(env) {
   ].concat(test ? [] : [
     new optimize.CommonsChunkPlugin({
       // Optimizing ensures loading order in index.html
-      name: ['legacy'].reverse()
+      name: ['legacy']
     }),
     new optimize.CommonsChunkPlugin({
       minChunks: Infinity,

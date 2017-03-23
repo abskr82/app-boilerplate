@@ -4,6 +4,9 @@ angular.module('lighting-ui-login').provider('AuthService', function AuthService
   var self = this;
 
   self.$get = [
+    function() {
+      
+    }
   //   '$rootScope', 'RestService', 'LightSocket', '$q', , 'StoreDispatcher',
   //   function AuthServiceFactory($rootScope, RestService, LightSocket, $q,  StoreDispatcher) {
   //     var user = {},
