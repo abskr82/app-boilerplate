@@ -28,7 +28,8 @@
 
     })
 
-    .controller('LoginController', function ($scope, $rootScope) {
+    .controller('LoginController', function ($scope, $rootScope, Contact) {
+       $scope.contacts = Contact.query();
  // jshint ignore:line
     //   $scope.inProgress = false;
     //   $scope.username = '';

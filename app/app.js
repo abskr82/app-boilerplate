@@ -31,7 +31,7 @@ export default angular.module('lighting-ui', [
 //     url: Defaults.lightSocket
 //   });
 // }])
-.run([ '$state',
+.run([ '$state', '$httpBackend',
   // '$rootScope', '$state', 'AuthService',
   // function ($rootScope, $state, AuthService) {
   //   $rootScope.$on("$stateChangeStart", function (event, nextRoute) {
@@ -44,7 +44,8 @@ export default angular.module('lighting-ui', [
   //     }
   //   });
   // }
-  function($state) {
+  function($state, $httpBackend) {
      $state.go('login');
   }
+
 ]);
