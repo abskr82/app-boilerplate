@@ -1,9 +1,7 @@
 (function () {
   'use strict';
-
-  angular.module('lighting-ui-login', [
-    'ui.router',
-    'ui.bootstrap'
+ angular.module('lighting-ui-login', [
+    'ui.router'
   ])
     .config(function ($stateProvider) {
       $stateProvider
@@ -24,90 +22,55 @@
           access: {
             isPublic: true
           }
-        })
-
+        });
     })
-
-    .controller('LoginController', function ($scope, $rootScope, Contact) {
-       $scope.contacts = Contact.query();
+    .controller('LoginController', function ($scope, $rootScope, AuthService, $state) {
  // jshint ignore:line
-    //   $scope.inProgress = false;
-    //   $scope.username = '';
-    //   function doPostLoginTasks() {
-    //     AuthService.changePasswordStatus().then(result => {
-    //       if (result.status !== 200) {
-    //         $scope.alerts = [
-    //           {
-    //             type: 'danger',
-    //             msg: 'Error verifying user status'
-    //           }
-    //         ];
-    //       } else if (result.data.password_changed === '') {
-    //         $state.go('change_password');
-    //       } else {
-    //         EulaService.verifyLicenseAgreement()
-    //           .then(userHasAcceptedLicenseAgreement => {
-    //             if (!userHasAcceptedLicenseAgreement) {
-    //               return AuthService.logout($scope.username)
-    //                 .then(() => {
-    //                   $rootScope.$broadcast('ClearSocketInterval');
-    //                   $state.go('login');
-    //                   $scope.inProgress = false;
-    //                 });
-    //             }
-                
-    //             AuthService.setAuthenticated(true);
-    //             LightSocket.open();
-    //             AlarmService.refresh();
-
-    //             if (PermissionService.getRole() === 'Scene Control') {
-    //               $state.go('scene');
-    //             } else if (PermissionService.can('mode.support')) {
-    //               $state.go('config');
-    //             } else {
-    //               $state.go('devices');
-    //             }
-    //           });
-    //       }
-    //     });
-    //   }
-
-    //   $scope.logIn = function (username, password) {
-    //     if (username !== undefined && password !== undefined) {
-    //       $scope.inProgress = true;
-    //       AuthService.login(username, password).then(function (result) {
-    //         $scope.username = username;
-    //         if (result.status !== 200) {
-    //           $scope.inProgress = false;
-    //           if(result.data === "Invalid username or password"){
-    //             result.data = 'Invalid login credentials'
-    //           }
-    //           $scope.alerts = [
-    //             {
-    //               type: 'danger',
-    //               msg: result.data
-    //             }
-    //           ];
-    //         } 
+      $scope.inProgress = false;
+      function doPostLoginTasks() {
+        AuthService.setAuthenticated(true);
+        LightSocket.open();
+        AlarmService.refresh();
+        if (PermissionService.getRole() === 'Scene Control') {
+          $state.go('scene');
+        } else {
+          $state.go('search');
+        }
+      }
+      $scope.logIn = function (username, password) {
+        console.log('heyy');
+        if (username !== undefined && password !== undefined) {
+          $scope.inProgress = true;
+          AuthService.login(username, password).then(function (result) { 
+            console.log(result);
+            if (result.status !== 200) {
+              $scope.inProgress = false;
+              if(result.data === "Invalid username or password"){
+                result.data = 'Invalid login credentials'
+              }
+              $scope.alerts = [
+                {
+                  type: 'danger',
+                  msg: result.data
+                }
+              ];
+            } 
                     
-    //         else {
-    //           doPostLoginTasks();
-    //         }
-    //       }).finally(function () {
-    //         $scope.login = {
-    //           email: '',
-    //           password: ''
-    //         };
-    //       });
-    //     }
-    //   };
-
-    //   AuthService.isAuthenticated().then(isAuthed => {
-    //     if (isAuthed) {
-    //       doPostLoginTasks();
-    //     }
-    //   });
-    // })
-
+            else {
+              doPostLoginTasks();
+            }
+          }).finally(function () {
+            $scope.login = {
+              email: '',
+              password: ''
+            };
+          });
+        }
+      };
+      AuthService.isAuthenticated().then(function (isAuthed) {
+        if (isAuthed) {
+          doPostLoginTasks();
+        }
+      });
     });
 })();
