@@ -1,42 +1,36 @@
-export default angular.module('lighting-ui-dashboard.controller', ['ui.router'])
-    .config(['$stateProvider', function ($stateProvider) {
+(function () {
+  'use strict';
+
+  angular.module('lighting-ui-dashboard', [
+    'ui.router',
+    'ui.bootstrap'
+  ])
+    .config(function ($stateProvider) {
       $stateProvider
         .state('dashboard', {
           url: '/dashboard',
           views: {
             // nav: {
-            //   template: require('../nav/nav.html')
+            //   template: require('../nav/nav-header.html'),
+            //   controller: ['$scope', 'ACTIVE_THEME', function ($scope, ACTIVE_THEME) {
+            //     $scope.ACTIVE_THEME = ACTIVE_THEME;
+            //   }]
             // },
             content: {
               template: require('./dashboard.html'),
-              controller: 'Dashboard',
-            //   resolve: {
-            //     viewData: ['RestService', 'RoutePermissionService', function (RestService, RoutePermissionService) {
-            //       return RoutePermissionService.can('dashboard_view.read')
-            //         .then(function () {
-            //           return RestService.all('dashboard_view');
-            //         });
-            //     }]
-            //   }
+              controller: 'Dashboard'
             }
           },
           access: {
-            isPublic: false
+            isPublic: true
           }
-        });
-    }])
-    .controller('Dashboard', ['$scope', '_', '$rootScope', function DashboardController($scope, _, $rootScope) {
-// jshint ignore:line
+        })
 
-      //$scope.alerts = [];
-      $scope.lights = [];
-      $scope.zones = [];
-      $scope.lights.count =10;
-      $scope.lights.title = 'Lights';
+    })
 
-      function callDashboardView() {
-        
-      }
-
-      callDashboardView();
-    }]);
+    .controller('Dashboard', function ($scope, $rootScope, Contact, $http) {
+        $scope.lights = [];
+        $scope.zones = [];
+        $scope.zones.title = 'Zones';
+    });
+})();
