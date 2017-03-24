@@ -31,21 +31,18 @@ export default angular.module('lighting-ui', [
 //     url: Defaults.lightSocket
 //   });
 // }])
-.run([ '$state', '$httpBackend',
-  // '$rootScope', '$state', 'AuthService',
-  // function ($rootScope, $state, AuthService) {
-  //   $rootScope.$on("$stateChangeStart", function (event, nextRoute) {
-  //     if ((!nextRoute.access || !nextRoute.access.isPublic)) {
-  //       AuthService.isAuthenticated().then(function (authed){
-  //         if(!authed){
-  //           $state.go('login');
-  //         }
-  //       });
-  //     }
-  //   });
-  // }
-  function($state, $httpBackend) {
-     $state.go('login');
+.run([
+  '$rootScope', '$state', 'AuthService',
+  function ($rootScope, $state, AuthService) {
+    $rootScope.$on("$stateChangeStart", function (event, nextRoute) {
+      if ((!nextRoute.access || !nextRoute.access.isPublic)) {
+        AuthService.isAuthenticated().then(function (authed){
+          if(!authed){
+            $state.go('login');
+          }
+        });
+      }
+    });
   }
 
 ]);
