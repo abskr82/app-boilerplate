@@ -19,7 +19,26 @@
           phone: '8445556433'
         }
       ];
+//Lights data
+      let lights = [
+        {
+          id: 1,
+          name: 'lace',
+          snap_address: '124555'
+        },
+        {
+          id: 2,
+          name: 'Hopper',
+          snap_address: '151906'
+        },
+        {
+          id: 3,
+          name: 'Babbage',
+          snap_address: '126433'
+        }
+      ];
       $httpBackend.whenGET('/contacts').respond(contacts);
+      $httpBackend.whenGET('/lights').respond(lights);
       $httpBackend.whenGET('/abc').respond(contacts);
       $httpBackend.whenPOST('/abc').respond(contacts);
       $httpBackend.whenPOST('/abc').respond(contacts);

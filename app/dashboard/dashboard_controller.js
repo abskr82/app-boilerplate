@@ -34,7 +34,14 @@
         $scope.zones.title = 'Zones';
         $scope.lights.title = 'Lights';
         $scope.zones.count = 10;
-        $scope.lights.count = 10;
+        
+
+        $http.get('/lights').then(function(response) {
+            $scope.lights.count = response.data.length;
+            console.log(response);
+        }).catch(function() {
+            $scope.status = 'Failed...';
+        });
 
     });
 })();
