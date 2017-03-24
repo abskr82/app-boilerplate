@@ -1,0 +1,53 @@
+<!-- htmlhint doctype-first:false -->
+<style>
+  .panel.panel-orange {
+    background-color: #f78a36;
+  }
+
+</style>
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="db-panels">
+      <div class="db-data">
+        <div class="db-info">
+          <div class="db-text">
+            <i class="db-icon fa fa-2x" ng-class="zones.icon"></i>
+            <span class="db-title">{{ zones.title }}</span>
+          </div>
+          <div class="panel db-zones-panel" ng-class="zones.panel"></div>
+          <h3>Total:</h3>
+
+          <p class="db-count" id="zone-count">{{ zones.count }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="db-panels">
+      <div class="db-data">
+        <div class="db-info">
+          <div class="db-text">
+            <i class="db-icon fa fa-2x" ng-class="lights.icon"></i>
+            <span class="db-title">{{ lights.title }}</span>
+          </div>
+          <div class="panel db-lights-panel" ng-class="lights.panel"></div>
+          <h3>Total:</h3>
+
+          <p class="db-count" id="light-count">{{ lights.count }}</p>
+        </div>
+        <h3>Light Levels:</h3>
+
+        <div class="db-light-levels" ng-repeat="level in lightLevels">
+          <!--<div class="light-levels-text">
+            <span>{{ level.count + " at level: " + level.level + "%"}}</span>
+          </div>-->
+          <!--<div style="width: {{ (level.count/lights.count)*100 }}%" class="light-levels-bar panel db-zones-panel"
+               ng-class="lights.panel"></div>-->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
