@@ -29,13 +29,14 @@
       $scope.inProgress = false;
       function doPostLoginTasks() {
         AuthService.setAuthenticated(true);
-        LightSocket.open();
-        AlarmService.refresh();
-        if (PermissionService.getRole() === 'Scene Control') {
-          $state.go('scene');
-        } else {
-          $state.go('search');
-        }
+        // LightSocket.open();
+        // AlarmService.refresh();
+        // if (PermissionService.getRole() === 'Scene Control') {
+        //   $state.go('scene');
+        // } else {
+          // $state.go('search');
+          $state.go('dashboard');
+        // }
       }
       $scope.logIn = function (username, password) {
         console.log('heyy');

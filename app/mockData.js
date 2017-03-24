@@ -48,7 +48,8 @@
         .respond(200, {
             status: "success"
       });
-       $httpBackend.expectPOST("/login").respond({ hello: 'World' });
+      //  $httpBackend.expectPOST("/login").respond({ hello: 'World' });
+       $httpBackend.whenPOST(/.*/).passThrough();
     }
   ])
   .factory('Contact', ['$resource', function($resource) {

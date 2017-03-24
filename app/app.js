@@ -23,9 +23,9 @@ export default angular.module('lighting-ui', [
 // .config(['$sceDelegateProvider', 'Defaults', function ($sceDelegateProvider, Defaults) {
 //   $sceDelegateProvider.resourceUrlWhitelist(['self', Defaults.baseUrl + '**']);
 // }])
-// .config(['RestServiceProvider', 'Defaults', function (RestServiceProvider, Defaults) {
-//   RestServiceProvider.setBaseUrl(Defaults.apiBaseUrl);
-// }])
+.config(['RestServiceProvider', 'Defaults', function (RestServiceProvider, Defaults) {
+  RestServiceProvider.setBaseUrl(Defaults.apiBaseUrl);
+}])
 // .config(['LightSocketProvider', 'Defaults', function (LightSocketProvider, Defaults) {
 //   LightSocketProvider.setOptions({
 //     url: Defaults.lightSocket

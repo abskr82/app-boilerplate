@@ -1,5 +1,6 @@
 import './components';
 import './login';
+import './sample';
 import './sampleTwo';
 import './dashboard';
 
