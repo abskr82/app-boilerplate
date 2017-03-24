@@ -32,5 +32,9 @@
         $scope.lights = [];
         $scope.zones = [];
         $scope.zones.title = 'Zones';
+        $scope.lights.title = 'Lights';
+        $scope.zones.count = 10;
+        $scope.lights.count = 10;
+
     });
 })();
