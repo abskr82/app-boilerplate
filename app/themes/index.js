@@ -18,7 +18,7 @@ const theme = Lighting;
 switch (theme) {
   case Lighting: { 
     require('./lighting/bootstrap_theme.css');
-    require('./lighting/lighting.css');
+    // require('./lighting/lighting.css');
 
     assign(ACTIVE_THEME, {
       [ASSETS.LightOff]: require('./lighting/img/light-off.png'),

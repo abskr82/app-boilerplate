@@ -8,12 +8,12 @@
         .state('login', {
           url: '/login',
           views: {
-            // nav: {
-            //   template: require('../nav/nav-header.html'),
-            //   controller: ['$scope', 'ACTIVE_THEME', function ($scope, ACTIVE_THEME) {
-            //     $scope.ACTIVE_THEME = ACTIVE_THEME;
-            //   }]
-            // },
+            nav: {
+              template: require('../nav/nav-header.html'),
+              controller: ['$scope', 'ACTIVE_THEME', function ($scope, ACTIVE_THEME) {
+                $scope.ACTIVE_THEME = ACTIVE_THEME;
+              }]
+            },
             content: {
               template: require('./login.html'),
               controller: 'LoginController'
