@@ -17,7 +17,7 @@ const ACTIVE_THEME = { };
 const theme = Lighting;
 switch (theme) {
   case Lighting: { 
-    require('./lighting/bootstrap_theme.css');
+    // require('./lighting/bootstrap_theme.css');
     // require('./lighting/lighting.css');
 
     assign(ACTIVE_THEME, {

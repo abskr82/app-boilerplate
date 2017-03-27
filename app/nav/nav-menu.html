@@ -25,42 +25,11 @@
     </button>
     <img class="navbar-brand" ng-src="{{:: $ctrl.ACTIVE_THEME.Logo }}" height="50px" alt=""/>
   </div>
-  <ul class="nav navbar-right top-nav" ng-if="$ctrl.authenticated">
-    <li class="dropdown" uib-dropdown on-toggle="toggled(open)" user-has-permission="alarm.read">
-      <syn-nav-menu-alarms number-of-alarms="$ctrl.numberOfAlarms"></syn-nav-menu-alarms>
-    </li>
-    <li class="dd-user">
-      <syn-nav-menu-user
-        can-edit-all-users="$ctrl.canEditAllUsers"
-        user="$ctrl.user"
-        on-logout="$ctrl.logout()">
-      </syn-nav-menu-user>
-    </li>
-  </ul>
-
-  <div class="navbar-collapse" ng-class="{ collapsed: $ctrl.isCollapsed }" ng-click="$ctrl.collapse()">
-    <ul class="nav navbar-nav side-nav">
-      <li ui-sref-active="navbar-nav-active" user-has-permission="dashboard_view.read,mode.primary">
-        <a ui-sref="dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-      </li>
-      <li ui-sref-active="navbar-nav-active" user-has-permission="light_zone.read,mode.primary">
-        <a ui-sref="devices"><i class="fa fa-fw fa-search"></i> Devices &amp; Zones</a>
-      </li>
-      <li ui-sref-active="navbar-nav-active" user-has-permission="scene.read,mode.primary">
-        <a ui-sref="scene"><i class="fa fa-fw fa-video-camera"></i> Scenes</a>
-      </li>
-      <li ui-sref-active="navbar-nav-active" user-has-permission="schedule_event.read,mode.primary">
-        <a ui-sref="schedule"><i class="fa fa-fw fa-calendar"></i> Schedule</a>
-      </li>
-      <li ui-sref-active="navbar-nav-active" user-has-permission="view_map,mode.primary">
-        <a ui-sref="map"><i class="fa fa-fw fa-map-marker"></i> Map</a>
-      </li>
-      <li ui-sref-active="navbar-nav-active" user-has-permission="config.read">
-        <a ui-sref="config"><i class="fa fa-fw fa-gear"></i> Config</a>
-      </li>
-      <li ui-sref-active="navbar-nav-active" user-has-permission="audit_log.read">
-        <a ui-sref="auditlog"><i class="fa fa-fw fa-file-text-o"></i> Audit Log</a>
-      </li>
+  <ul class="nav navbar-right top-nav">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Schedule</a></li>
+      <li><a href="#">Alarm</a></li>
+      <li><a href="#">User</a></li>
     </ul>
-  </div>
+  </ul>
 </nav>
